@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Login from '../components/login';
 import Signup from '../components/signup';
-
+import {Grid} from '@material-ui/core';
+import img from "./educ.svg"
 
 const SignInOutContainer=()=>{
     const [value, setValue]=useState(0)
@@ -14,7 +15,7 @@ const SignInOutContainer=()=>{
         setValue(newValue);
     };
     
-    const paperStyle={width:339, margin:"20px Auto"};
+    const paperStyle={width:364, margin:"20px Auto"};
 
     function TabPanel(props) {
         const { children, value, index, ...other } = props;
@@ -35,9 +36,21 @@ const SignInOutContainer=()=>{
           </div>
         );
       }
+     
       
 return (
-    <Paper elevation={20} style={paperStyle}>
+  <Grid container xs={12}>
+
+     <Grid item xs={6}  >
+      <Typography><h1>Uniswap</h1></Typography>
+
+      <img src={img} alt='uniswap' style={{width:"74vh", marginLeft:'100px', marginTop:'60px'}} align="center"  ></img>
+
+      </Grid>
+
+
+    <Grid item xs={6}  >
+    <Paper elevation={20} style={paperStyle} >
   <Tabs
     value={value}
     indicatorColor="primary"
@@ -48,14 +61,21 @@ return (
     <Tab label="Se connecter" />
   </Tabs>
 
-   <TabPanel value={value} index={0}>
-     <Signup/>      
-   </TabPanel>
+      <TabPanel value={value} index={0}>
+        <Signup/>      
+      </TabPanel>
 
       <TabPanel value={value} index={1}>
         <Login handleChange={handleChange}/>
       </TabPanel>
-</Paper>
+    </Paper>
+    </Grid>
+
+
+ 
+
+</Grid>
+
 )
 }
 export default SignInOutContainer;
