@@ -7,9 +7,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 
 const Login=({handleChange})=>{
-    const paperStyle={padding :20, height:"62vh" ,width:325 , margin:"0 Auto"}
+    const paperStyle={padding :20, height:"62vh" ,width:420 , margin:"0 Auto"}
     const avatarStyle={backgroundColor:"#50aebb" }
     const btStyle={margin:'15px 0'}
+
+    
     return(
        <Grid>
             <Paper   style={paperStyle} >
@@ -22,15 +24,14 @@ const Login=({handleChange})=>{
                  <TextField label='Mot de passe' placeholder= 'votre mot de passe' fullWidth type='password' required />
 
                  <FormControlLabel
-        control={
-          <Checkbox
-             
-            name="checkedB"
-            color="primary"
-          />
-        }
-        label="Se souvenir de moi"
-      />
+                    control={
+                    <Checkbox
+                    name="checkedB"
+                    color="primary"
+                  />
+                 }
+                   label="Se souvenir de moi"
+                 />
            <Button type='submit' color='primary' variant="contained" style={btStyle} fullWidth>Se connecter</Button>
            <Typography><Link href="#"  >
                 Mot de passe oublié ?

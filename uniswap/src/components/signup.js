@@ -11,10 +11,11 @@ import { FormLabel } from '@material-ui/core';
 
 
 const Signup=()=>{
-    const paperStyle={padding :20, height:"75vh" ,width:324  , margin:"0 Auto"  }
+    const paperStyle={padding :20, height:"73vh" ,width:417  , margin:"0 Auto"  }
     const avatarStyle={backgroundColor:"#50aebb" }
-    const btStyle={margin:'15px 0'}
+    const btStyle={width:"25vh" }
     const margStyle ={marginTop:15}
+    const prenomStyle={marginLeft:25}
     return(
        <Grid  >
             <Paper   style={paperStyle}   >
@@ -24,26 +25,37 @@ const Signup=()=>{
              </Grid>
 
              <form >
-                 <TextField label='Nom' placeholder= 'votre nom'   fullWidth  required />
-                 <TextField label='Prénom' placeholder= 'votre Prénom'   fullWidth  required />
-                      
-                 <TextField label='Email' placeholder= 'votre email' type='Email' fullWidth  required />
-                 <TextField label='Mot de passe' placeholder= 'mot de passe' fullWidth type='password' required />
-                 <TextField label='confirmer le Mot de passe'  placeholder= 'mot de passe' fullWidth type='password' required />
+                 <div className="row">
+                   <TextField label='Nom' placeholder= 'votre nom' type="text" name='nom'   required   />
+                   <TextField label='Prénom' placeholder= 'votre Prénom' type="text" name='prenom'    style={prenomStyle}    required   />
+                 </div>
+                 <div>
+                 <TextField label='Email' placeholder= 'votre email' name='email' fullWidth  />
+                 <TextField label='Mot de passe' placeholder= 'mot de passe' fullWidth type='password' required nom="password" />
+                 <TextField label='Confirmer le Mot de passe'  placeholder= 'mot de passe' fullWidth type='password' required nom="confirmp"   />
 
-                 <FormControl component="fieldset" style={margStyle} required>
+                   <FormControl component="fieldset" style={margStyle} required>
                      <FormLabel component='legend' >Vous êtes</FormLabel>
 
                      <RadioGroup aria-label="gender" name="gender1" style= {{display:'initial'}} >
                      <FormControlLabel value="female" control={<Radio />} label="Etudiant" />
                      <FormControlLabel value="male" control={<Radio />} label="Enseignant" />
-                   </RadioGroup>
+                     </RadioGroup>
+                   </FormControl>
+                 <div align="center">
+                  <Button type='submit' color='primary' variant="contained" style={btStyle}   >S'inscrire</Button>
+                  </div   >
 
-                 </FormControl>
-                 
-                  <Button type='submit' color='primary' variant="contained" style={btStyle} fullWidth>S'inscrire</Button>
-           
+                    <div>
+                        S'inscrire avec
+                    </div>
 
+                    <div>  
+                       <Button color='primary' >facebook</Button>   
+                       <Button color='primary' >google</Button> 
+                    </div>
+
+                    </div>
              </form>
              </Paper>
 

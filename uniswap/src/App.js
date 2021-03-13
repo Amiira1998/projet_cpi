@@ -1,8 +1,5 @@
 import React from "react";
-
 import SignInOutContainer  from "./container/index";
-
-
 
 
 
@@ -11,8 +8,9 @@ function App() {
   return (
      <div className="App">   
      
+      <SignInOutContainer/>;
 
-     <SignInOutContainer/>
+      
      
       </div>
   );
